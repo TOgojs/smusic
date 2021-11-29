@@ -1,4 +1,4 @@
-# v3
+# smusic
 
 ## Project setup
 ```

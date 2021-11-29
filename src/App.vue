@@ -1,30 +1,42 @@
 <template>
-  <div id="nav">
+  <!-- 左侧菜单 -->
+  <!-- 右侧内容 -->
+  <!-- 播放器位置 -->
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view />
+  <router-view /> -->
+
+  <el-container id="app" class="theme-light">
+    <el-aside width="200px">Aside</el-aside>
+    <el-main> eqwewq</el-main>
+  </el-container>
 </template>
 
 <style lang="scss">
+html,
+body {
+  height: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100%;
 }
 
-#nav {
-  padding: 30px;
+.el-aside {
+  background-color: #d3dce6;
+  color: var(--el-text-color-primary);
+  text-align: center;
+  line-height: 200px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.el-main {
+  background-color: #e9eef3;
+  text-align: center;
+  line-height: 160px;
 }
 </style>
