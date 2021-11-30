@@ -1,0 +1,52 @@
+/* // 明暗色变量 */
+:root {
+  /* 内容区背景色 */
+  --s-c-bg-l: #fefefe;
+  --s-c-bg-d: #0e0f2e;
+
+  /* 菜单背景色 */
+  --s-m-bg-l: #dddce4;
+  --s-m-bg-d: #0e0f2e;
+
+  /* 菜单边框色 */
+  --s-m-br-l: #dddce4;
+  --s-m-br-d: #24242c;
+
+  /* 播放器背景色 */
+  --s-p-bg-l: #312f61;
+  --s-p-bg-d: #6c66b3;
+
+  /* 文字色 */
+  --s-txt-l: #333333;
+  --s-txt-d: #fefefe;
+
+  /* 文字选中色 */
+  --s-a-txt-l: #e41749;
+  --s-a-txt-d: #e41749;
+
+  /* 辅助文字色 */
+  --s-s-txt-l: #777777;
+  --s-s-txt-d: #bdbaba;
+}
+
+[data-user-color-scheme="light"] {
+  --cont-background-color: var(--s-c-bg-l);
+  --menu-background-color: var(--s-m-bg-l);
+  --menu-border-color: var(--s-m-br-l);
+  --play-background-color: var(--s-p-bg-l);
+
+  --text-color: var(--s-txt-l);
+  --text-active-color: var(--s-a-txt-l);
+  --text-sub-color: var(--s-s-txt-l);
+}
+
+[data-user-color-scheme="dark"] {
+  --cont-background-color: var(--s-c-bg-d);
+  --menu-background-color: var(--s-m-bg-d);
+  --menu-border-color: var(--s-m-br-d);
+  --play-background-color: var(--s-p-bg-d);
+
+  --text-color: var(--s-txt-d);
+  --text-active-color: var(--s-a-txt-d);
+  --text-sub-color: var(--s-s-txt-d);
+}

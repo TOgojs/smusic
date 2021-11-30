@@ -1,20 +1,44 @@
 <template>
-  <!-- 左侧菜单 -->
-  <!-- 右侧内容 -->
-  <!-- 播放器位置 -->
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view /> -->
-
-  <el-container id="app" class="theme-light">
-    <el-aside width="200px">Aside</el-aside>
-    <el-main> eqwewq</el-main>
+  <el-container id="app">
+    <el-aside width="250px">
+      <Side></Side>
+    </el-aside>
+    <el-main>
+      <el-button type="info" @click="change('dark')">暗色</el-button>
+      <el-button @click="change('light')">亮色</el-button>
+      <Container></Container>
+    </el-main>
   </el-container>
+  <!-- 播放器位置 -->
 </template>
 
+<script>
+import { onMounted } from "vue";
+import Side from "@/components/Side.vue";
+import Container from "@/components/Container.vue";
+export default {
+  components: {
+    Side,
+    Container,
+  },
+  setup() {
+    onMounted(() => {
+      // 初始亮色
+      document.body.setAttribute("data-user-color-scheme", "light");
+    });
+
+    function change(params) {
+      document.body.setAttribute("data-user-color-scheme", params);
+    }
+    return {
+      change,
+    };
+  },
+};
+</script>
+
 <style lang="scss">
+@import url(./assets/css/color.css);
 html,
 body {
   height: 100%;
@@ -28,15 +52,14 @@ body {
 }
 
 .el-aside {
-  background-color: #d3dce6;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 200px;
+  background-color: var(--menu-background-color);
+  transition: all ease 0.4s;
+  border-right: 1px solid var(--menu-border-color);
 }
 
 .el-main {
-  background-color: #e9eef3;
-  text-align: center;
-  line-height: 160px;
+  transition: all ease 0.4s;
+  background-color: var(--cont-background-color);
+  color: var(--text-color);
 }
 </style>
