@@ -32,4 +32,17 @@ axios.interceptors.response.use((res) => {
   return res.data;
 });
 
-export default axios;
+// export default axios;
+export default {
+  get(url, params) {
+    return new Promise((resolve) => {
+      axios({
+        method: "get",
+        params,
+        url,
+      }).then((res) => {
+        resolve(res);
+      });
+    });
+  },
+};

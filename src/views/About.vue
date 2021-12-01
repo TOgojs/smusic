@@ -1,19 +1,30 @@
-<template>关于</template>
+<template>
+  <div>
+    {{ data }}
+  </div>
+</template>
 
 <script>
-import axios from "@/utils/axios";
-import { onMounted, reactive, toRefs } from "vue";
+import { onMounted, reactive, toRefs, getCurrentInstance } from "vue";
 export default {
   setup() {
     const state = reactive({ data: {} });
-    const getDetail = (id) => {
-      axios.get(`/search?keywords=${id}`).then((res) => {
-        console.log("res: ", res);
-      });
+    const { proxy } = getCurrentInstance();
+    const getDetail = async (data) => {
+      proxy.$Api
+        .search(data)
+        .then((res) => {
+          console.log("data1111111111111111: ", res.result.songs);
+          state.data = res.result;
+          return res.result;
+        })
+        .then((res) => {
+          console.log("res3333333333333333333: ", res);
+        });
     };
 
     onMounted(() => {
-      getDetail("海阔天空");
+      getDetail({ keywords: "海阔天空" });
     });
 
     return {

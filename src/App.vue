@@ -1,19 +1,21 @@
 <template>
   <el-container id="app">
     <el-aside width="250px">
-      <Side></Side>
+      <el-scrollbar>
+        <Side></Side>
+      </el-scrollbar>
     </el-aside>
-    <el-main>
-      <el-button type="info" @click="change('dark')">暗色</el-button>
-      <el-button @click="change('light')">亮色</el-button>
-      <Container></Container>
+
+    <el-main style="padding: 0">
+      <el-scrollbar>
+        <Container></Container>
+      </el-scrollbar>
     </el-main>
   </el-container>
   <!-- 播放器位置 -->
 </template>
 
 <script>
-import { onMounted } from "vue";
 import Side from "@/components/Side.vue";
 import Container from "@/components/Container.vue";
 export default {
@@ -21,19 +23,7 @@ export default {
     Side,
     Container,
   },
-  setup() {
-    onMounted(() => {
-      // 初始亮色
-      document.body.setAttribute("data-user-color-scheme", "light");
-    });
-
-    function change(params) {
-      document.body.setAttribute("data-user-color-scheme", params);
-    }
-    return {
-      change,
-    };
-  },
+  setup() {},
 };
 </script>
 

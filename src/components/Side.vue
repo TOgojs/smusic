@@ -22,17 +22,17 @@ const list = [
   {
     title: "推荐",
     children: [
-      { title: "发现", name: "find", icon: "bell-filled" },
-      { title: "视频", name: "video", icon: "bell-filled" },
-      { title: "热门", name: "hot", icon: "bell-filled" },
-      { title: "关于", name: "about", icon: "briefcase" },
+      { title: "发现", name: "find", icon: "opportunity" },
+      { title: "视频", name: "video", icon: "video-camera-filled" },
+      { title: "热门", name: "hot", icon: "help-filled" },
+      { title: "关于", name: "about", icon: "question-filled" },
     ],
   },
   {
     title: "我的",
     children: [
       { title: "乐库", name: "Library", icon: "bell-filled" },
-      { title: "最近播放", name: "record", icon: "briefcase" },
+      { title: "最近播放", name: "record", icon: "histogram" },
     ],
   },
 ];

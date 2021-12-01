@@ -1,9 +1,13 @@
 <template>
-  <div>发现</div>
+  <div class="find">发现</div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.find {
+  height: 1000px;
+}
+</style>

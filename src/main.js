@@ -24,6 +24,18 @@ router.isReady().then(() => {
   app.mount("#app");
 });
 
+// 挂载全局 Api
+import Api from "@/api/api";
+app.config.globalProperties.$Api = Api;
+// 用法
+// const { proxy } = getCurrentInstance();
+// proxy.$Api
+//         .search(data)
+//         .then((res) => {
+//           console.log("data1111111111111111: ", res.result.songs);
+//           return res.result;
+//         })
+
 // 开启vue devtool
 // if (process.env.NODE_ENV === "development") {
 //   if ("__VUE_DEVTOOLS_GLOBAL_HOOK__" in window) {
