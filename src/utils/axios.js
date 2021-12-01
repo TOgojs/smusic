@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ElMessage } from "element-plus";
 // import router from "@/router/index";
-// import { localGet } from "./index";
+import { randomCNIp } from "./index";
 
 // 这边由于后端没有区分测试和正式，姑且都写成一个接口。
 axios.defaults.baseURL =
@@ -32,9 +32,11 @@ axios.interceptors.response.use((res) => {
   return res.data;
 });
 
+console.log("pppppppppppppppppp", randomCNIp());
 // export default axios;
 export default {
   get(url, params) {
+    params["realIP"] = randomCNIp();
     return new Promise((resolve) => {
       axios({
         method: "get",
