@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import { randomCNIp } from "@/utils/index";
+import { useLocalStorage, useBrowserLocation } from "@vueuse/core";
 
 // 全局引入
 import ElementPlus from "element-plus";
@@ -36,10 +38,11 @@ app.config.globalProperties.$Api = Api;
 //           return res.result;
 //         })
 
-// 开启vue devtool
-// if (process.env.NODE_ENV === "development") {
-//   if ("__VUE_DEVTOOLS_GLOBAL_HOOK__" in window) {
-//     window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app;
-//   }
-//   app.config.devtools = true;
-// }
+// 生成本地ip
+let localIp = randomCNIp();
+useLocalStorage("localIp", localIp);
+const location = useBrowserLocation();
+console.log("location: ", location);
+
+// 默认亮暗
+useLocalStorage("themeType", "light");

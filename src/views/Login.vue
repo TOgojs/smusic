@@ -1,5 +1,5 @@
 <template>
-  <div>登录弹框</div>
+  <div class="login">登录</div>
 </template>
 
 <script>

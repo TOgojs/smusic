@@ -41,12 +41,13 @@
 <script>
 import { onMounted, reactive, toRefs } from "vue";
 import { useRouter, useRoute } from "vue-router";
+import { useLocalStorage } from "@vueuse/core";
 export default {
   setup() {
     const state = reactive({
       isLight: true,
       searchInput: "",
-      themeType: "light",
+      themeType: useLocalStorage("themeType"),
       avatarUrl:
         "https://p3.music.126.net/grS1FuIWmPY9wmKFRpBT2Q==/1378787587205708.jpg",
       //   avatarUrl:
