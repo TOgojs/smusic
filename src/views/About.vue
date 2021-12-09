@@ -2,6 +2,7 @@
   <el-button type="" @click="logout">退出</el-button>
   <el-button type="" @click="login">登录</el-button>
   <el-button type="" @click="logState">状态查询</el-button>
+  <el-button type="" @click="out">弹框</el-button>
   <div>
     <!-- {{ data }} -->
   </div>
@@ -14,6 +15,18 @@ export default {
   setup() {
     const state = reactive({ data: {} });
     const { proxy } = getCurrentInstance();
+
+    function out(params) {
+      console.log("params: ", params);
+      proxy.$LoginBox({ title: "提示", text: "确认删除该商品吗？" });
+      // .then(() => {
+      //   console.log("params: cccccccccccc", params);
+      // })
+      // .catch(() => {
+      //   // 点击取消按钮触发
+      //   console.log("params:nnnnnnnnnnnnnnnnn ", params);
+      // });
+    }
     const getDetail = (data) => {
       proxy.$Api.search(data).then((res) => {
         //   console.log("data1111111111111111: ", res.result.songs);
@@ -53,6 +66,7 @@ export default {
     });
 
     return {
+      out,
       logout,
       login,
       logState,

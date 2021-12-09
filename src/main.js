@@ -22,6 +22,10 @@ for (const iconName in ElIconModules) {
 
 app.use(ElementPlus).use(store).use(router);
 
+// 引入全局登录
+import LoginBox from "@/components/LoginBox/index";
+app.config.globalProperties.$LoginBox = LoginBox;
+
 router.isReady().then(() => {
   app.mount("#app");
 });
