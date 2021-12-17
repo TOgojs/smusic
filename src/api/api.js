@@ -11,6 +11,11 @@ const Api = {
 
   // 搜索--------
   search: (data) => axios.get(`/search`, data),
+
+  // 发现--------
+
+
+  // 电台--------
 };
 
 export default Api;

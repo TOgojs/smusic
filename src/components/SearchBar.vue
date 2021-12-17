@@ -118,9 +118,9 @@ export default {
     }
     .search {
       .search-input {
-        .el-input__inner {
-          //   background: rgba($color: #aaa9a9, $alpha: 0.1) !important;
-        }
+        // .el-input__inner {
+        //   background: rgba($color: #aaa9a9, $alpha: 0.1) !important;
+        // }
       }
     }
   }
